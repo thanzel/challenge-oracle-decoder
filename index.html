@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="icon" type="image/x-icon" href="assets/LogoRosado.png">
+    <link rel="stylesheet" href="style/style.css">
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img class="logo" onclick="condicionesIniciales()" src="assets/LogoRosado.png"
+                alt="Logo de Alura Latam color rosado. Pulse para limpiar">
+        </nav>
+    </header>
+    <main class="contenedor">
+        <section class="contenido">
+            <div class="contenido__principal">
+                <h1 class="contenido__principal__titulo">Encriptando y Desencriptando Texto</h1>
+                <textarea class="contenido__principal__area" id="textoIngresado"
+                    placeholder="Ingrese aquí el texto a procesar"></textarea>
+                <p class="texto__menor"><img class="exclamacion" src="assets/exclamation-svgrepo-com.svg"
+                        alt="Signo de exclamación cerrado">Solo
+                    letras minúsculas y sin acentos</p>
+                <div class="contenido__principal__botones">
+                    <button class="botones__diseño btn_encriptar" id="btnEncriptar"
+                        onclick="encriptar()">Encriptar</button>
+                    <button class="botones__diseño btn_desencriptar" id="btnDesencriptar"
+                        onclick="desencriptar()">Desencriptar</button>
+                </div>
+            </div>
+            <div class="contenido__secundario">
+                <textarea class="contenido__secundario__area" id="textoResultante" cols=4 readonly="readonly"
+                    disabled="disabled"></textarea>
+                <img class="contenido__secundario__imagen" src="assets/Laptop.png"
+                    alt="Persona parada encima de una laptop con artículos de oficina alrededor" id="imgLaptop">
+                <p class="contenido__secundario__parrafo1 texto__mayor" id="parrafo1">Ningún mensaje fue
+                    encontrado</p>
+                <p class="contenido__secundario__parrafo2 texto__medio" id="parrafo2">Ingresa el texto que
+                    desees encriptar o desencriptar.</p>
+                <button class="botones__diseño btn_copiar" onclick="copiarTexto()" id="btnCopiar">Copiar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer__redes">
+                <a href="https://www.linkedin.com/in/yenny-chipamo/" target="_blank" rel="noopener noreferrer">
+                    <img class="footer__imagen" src="assets/linkedin.svg" alt="Logo de linkedin">
+                </a>
+                <a href="https://github.com/softwareych?tab=repositories" target="_blank" rel="noopener noreferrer">
+                    <img class="footer__imagen" src="assets/github.svg" alt="Logo de github">
+                </a>
+                <a href="mailto:yenny.chipamo@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <img class="footer__imagen" src="assets/email.svg" alt="Logo de email">
+                </a>
+            </div>
+            <div class="footer__texto">Creado por <strong>Yenny Chipamo</strong> (2024) &#169;</div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>
