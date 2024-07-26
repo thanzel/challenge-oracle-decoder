@@ -197,7 +197,7 @@ body {
     padding: 0 10px 7px 0;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {      
+@media (min-width: 768px) and (max-width: 1024px) {      
 
     header {
         padding: 2% 0% 10% 0%;
