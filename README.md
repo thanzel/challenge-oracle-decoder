@@ -9,8 +9,8 @@
 
 </div>
 
+![Banner Para Github](https://github.com/user-attachments/assets/07f0f5cf-80fe-46b4-960a-cc6962a6009b)
 
-![Banner Para Github](https://github.com/user-attachments/assets/ec38c133-2317-459e-b49e-b369f66078ae)
 
 # Desafío
 
