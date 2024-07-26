@@ -202,7 +202,11 @@ body {
 @media (max-width: 1024px) {      
 
     header {
-        padding: 5% 0% 5% 18%;
+        padding: 5% 0% 5% 15%;
+    }
+
+    .logo {
+        width: 6%;
     }
 
     .contenido {
@@ -228,7 +232,7 @@ body {
 
     .contenido__secundario__area {
         width: 580px;
-        height: 220px;
+        height: 255px;
     }
 
     .contenido__secundario__parrafo1,
