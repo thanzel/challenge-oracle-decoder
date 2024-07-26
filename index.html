@@ -7,7 +7,7 @@
     <title>Encriptador de Texto</title>
     <link rel="icon" type="image/x-icon" href="assets/LogoRosado.png">
     <link rel="stylesheet" href="style/style.css">
-    
+
 </head>
 
 <body>
@@ -19,11 +19,11 @@
     </header>
     <main class="contenedor">
         <section class="contenido">
-            <div class="contenido__principal">
+            <section class="contenido__principal">
                 <h1 class="contenido__principal__titulo">Encriptando y Desencriptando Texto</h1>
                 <textarea class="contenido__principal__area" id="textoIngresado"
                     placeholder="Ingrese aquí el texto a procesar"></textarea>
-                <p class="texto__menor"><img class="exclamacion" src="assets/exclamation-svgrepo-com.svg"
+                <p class="parrafo__menor"><img class="exclamacion" src="assets/exclamation-svgrepo-com.svg"
                         alt="Signo de exclamación cerrado">Solo
                     letras minúsculas y sin acentos</p>
                 <div class="contenido__principal__botones">
@@ -32,18 +32,18 @@
                     <button class="botones__diseño btn_desencriptar" id="btnDesencriptar"
                         onclick="desencriptar()">Desencriptar</button>
                 </div>
-            </div>
-            <div class="contenido__secundario">
+            </section>
+            <section class="contenido__secundario">
                 <textarea class="contenido__secundario__area" id="textoResultante" cols=4 readonly="readonly"
                     disabled="disabled"></textarea>
                 <img class="contenido__secundario__imagen" src="assets/Laptop.png"
                     alt="Persona parada encima de una laptop con artículos de oficina alrededor" id="imgLaptop">
-                <p class="contenido__secundario__parrafo1 texto__mayor" id="parrafo1">Ningún mensaje fue
+                <p class="contenido__secundario__parrafo1 parrafo__mayor" id="parrafo1">Ningún mensaje fue
                     encontrado</p>
-                <p class="contenido__secundario__parrafo2 texto__medio" id="parrafo2">Ingresa el texto que
+                <p class="contenido__secundario__parrafo2 parrafo__medio" id="parrafo2">Ingresa el texto que
                     desees encriptar o desencriptar.</p>
                 <button class="botones__diseño btn_copiar" onclick="copiarTexto()" id="btnCopiar">Copiar</button>
-            </div>
+            </section>
         </section>
     </main>
 
@@ -60,7 +60,7 @@
                     <img class="footer__imagen" src="assets/email.svg" alt="Logo de email">
                 </a>
             </div>
-            <div class="footer__texto">Creado por <strong>Yenny Chipamo</strong> (2024) &#169;</div>
+            <div class="footer__texto">Diseñado por <strong>Yenny Chipamo</strong> (2024) &#169;</div>
         </div>
     </footer>
 

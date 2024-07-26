@@ -7,8 +7,9 @@ let esClickeado =false;
 // Constante regex para validar el texto
 const regexCaracteresValidos = /^[a-z0-9\s!@#$%^&*()_+=[\]{};':"\\|,.<>/?~-]*$/;
 
-//Constantes para la encriptación
+//Constantes regex para la encriptación
 const regexParaEncritarVocales = /[aeiou]/g;
+//Constante objeto tipo maps (clave-valor) para encriptar
 const encriptacionDeVocales = {
     "a": "ai",
     "e": "enter",
@@ -17,8 +18,9 @@ const encriptacionDeVocales = {
     "u": "ufat"
 };
 
-//Constantes para la desencriptacion
+//Constantes regex para la desencriptacion
 const regexParaDesencritarVocales = /ai|enter|imes|ober|ufat/g;
+//Constante objeto tipo maps (clave-valor) para desencriptar
 const desencriptacionDeVocales = {
     "ai": "a",
     "enter": "e",
@@ -37,10 +39,9 @@ function capturaTexto() {
 
 // Función para el proceso de encriptacion
 function encriptar() {
-
     textoIngresado = capturaTexto();
     esClickeado = true;
-    if (validaTexto(textoIngresado)) {
+    if (esValido(textoIngresado)) {
         document.getElementById('textoResultante').value = encriptarSoloVocales(textoIngresado);
         ocultarElementos();
     } 
@@ -54,10 +55,9 @@ function encriptarSoloVocales(texto) {
 
 // Función para el proceso de desencriptación
 function desencriptar() {
-
     textoIngresado = capturaTexto();
     esClickeado = false;
-    if (validaTexto(textoIngresado)) {
+    if (esValido(textoIngresado)) {
         document.getElementById('textoResultante').value = desencriptarSoloVocales(textoIngresado);
         ocultarElementos();
     } 
@@ -70,8 +70,7 @@ function desencriptarSoloVocales(texto) {
 }
 
 // Función para la validación preliminar del texto a procesar (cifrar o descifrar)
-function validaTexto(textoIngresado) {
-
+function esValido(textoIngresado) {
     // Verifico si el texto ingresado está vacío, de ser así el proceso no continúa
     if (textoIngresado === "" || textoIngresado == null) {
         swal('Error', `Favor ingrese un texto para poder ${(esClickeado === true) ? 'Encriptarlo' : 'Desencriptarlo' }`, 'error');
@@ -85,7 +84,6 @@ function validaTexto(textoIngresado) {
         document.getElementById("textoIngresado").focus();
         return false;
     }
-
     //retorna true cuando el texto validado está correcto
     return true;
 }
@@ -98,13 +96,13 @@ function copiarTexto() {
 
 // Función para iniciar los elementos de la página
 function condicionesIniciales() {
-    document.getElementById("textoIngresado").value = "";
-    document.getElementById("textoResultante").value = "";
-    textoIngresado = "";
     document.getElementById("imgLaptop").style.visibility = 'visible';
     document.getElementById("parrafo1").style.visibility = 'visible';
     document.getElementById("parrafo2").style.visibility = 'visible';
     document.getElementById("btnCopiar").style.visibility = 'hidden';
+    document.getElementById("textoIngresado").value = "";
+    document.getElementById("textoResultante").value = "";
+    textoIngresado = "";
     return;
 }
 

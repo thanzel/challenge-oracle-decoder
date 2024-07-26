@@ -16,7 +16,6 @@
 
 * {
     padding: 0;
-    /*quita los espacios de cada elemento*/
     margin: 0;
 }
 
@@ -70,19 +69,19 @@ body {
     width: 20px;
 }
 
-.texto__menor {
+.parrafo__menor {
     font-family: "Inter", sans-serif;
     font-size: 12px;
     color: var(--color-letra-sextonaria);
 }
 
-.texto__medio {
+.parrafo__medio {
     font-family: "Inter", sans-serif;
     font-size: 16px;
     color: var(--color-letra-cuarternaria);
 }
 
-.texto__mayor {
+.parrafo__mayor {
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 24px;
@@ -153,7 +152,6 @@ body {
 .contenido__secundario__imagen {
     width: 18rem;
     margin-top: 10px;
-
 }
 
 .contenido__secundario__parrafo1,
@@ -195,6 +193,10 @@ body {
 .footer__imagen {
     width: 1.8%;
     padding: 0 10px 7px 0;
+}
+
+.footer__imagen:hover {
+    opacity: 0.6;
 }
 
 @media (max-width: 1024px) {      
