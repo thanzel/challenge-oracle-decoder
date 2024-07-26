@@ -280,7 +280,7 @@ body {
     }
 
     .contenido__principal__area {
-        height: 180px;
+        height: 170px;
     }
 
     .contenido__principal__botones {
@@ -302,7 +302,7 @@ body {
 
     .contenido__secundario__parrafo1,
     .contenido__secundario__parrafo2 {
-        width: 50%;
+        width: 43%;
         text-align: center;
     }
 
@@ -315,7 +315,7 @@ body {
     }
 
     .contenido__secundario__parrafo2 {
-        margin-top: 95;
+        margin-top: 118px;
     }
 
     .btn_copiar {
