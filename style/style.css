@@ -258,7 +258,7 @@ body {
     }
 }
 
-@media (max-device-width : 767px) { 
+@media screen and (max-device-width : 767px) { 
 
     header {
         padding: 3% 0% 2% 9%;
@@ -280,7 +280,7 @@ body {
     }
 
     .contenido__principal__area {
-        height: 230px;
+        height: 180px;
     }
 
     .contenido__principal__botones {
@@ -311,15 +311,15 @@ body {
     }
 
     .contenido__secundario__parrafo1 {
-        margin-top: 50px;
+        margin-top: 25px;
     }
 
     .contenido__secundario__parrafo2 {
-        margin-top: 140px;
+        margin-top: 95;
     }
 
     .btn_copiar {
-        margin-top: 145px;
+        margin-top: 125px;
     }
 
     .footer {
