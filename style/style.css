@@ -261,7 +261,11 @@ body {
 @media (max-device-width : 767px) { 
 
     header {
-        padding: 2% 0% 2% 25%;
+        padding: 3% 0% 2% 9%;
+    }
+
+    .logo {
+        width: 6%;
     }
 
     .contenido {
