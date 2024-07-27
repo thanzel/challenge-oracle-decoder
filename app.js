@@ -114,3 +114,4 @@ function ocultarElementos() {
     document.getElementById("btnCopiar").style.visibility = 'visible';
     return;
 }
+

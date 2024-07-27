@@ -58,7 +58,8 @@ body {
     resize: none;
     text-emphasis: none;
     background-color: var(--color-primario);
-    color: var(--color-letra-primaria);
+    background: conic-gradient(at 0% 50%, var(--color-primario) 20%, var(--color-secundario) 30%, var(--color-primario) 50%); 
+    color: var(--color-letra-secundaria);
     width: 100%;
     height: 320px;
     font-size: 20px;
