@@ -66,7 +66,7 @@ function desencriptar() {
 
 // Función para desencriptacion del texto Ingresado
 function desencriptarSoloVocales(texto) {
-    return texto.replace(regexParaDesencritarVocales, (palabra) => desencriptacionDeVocales[palabra]);
+    return texto.replace(regexParaDesencritarVocales, (vocal) => desencriptacionDeVocales[vocal]);
 }
 
 // Función para la validación preliminar del texto a procesar (cifrar o descifrar)
