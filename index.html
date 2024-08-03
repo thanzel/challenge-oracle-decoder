@@ -23,9 +23,13 @@
                 <h1 class="contenido__principal__titulo">Encriptando y Desencriptando Texto</h1>
                 <textarea class="contenido__principal__area" id="textoIngresado"
                     placeholder="Ingrese aquí el texto a procesar"></textarea>
-                <p class="parrafo__menor"><img class="exclamacion" src="assets/exclamation-svgrepo-com.svg"
-                        alt="Signo de exclamación cerrado">Solo
-                    letras minúsculas y sin acentos</p>
+                <!-- <p class="parrafo__menor" id="contenido__mensaje__error"><img class="exclamacion" src="assets/exclamation-svgrepo-com.svg"
+                        alt="Signo de exclamación cerrado" id="contenido__img"></p> -->
+                <div class="contenido__principal__alerta" id="alerta">
+                    <img class="exclamacion" src="assets/exclamation-svgrepo-com.svg" alt="Signo de exclamación cerrado"
+                        id="contenido__img">
+                    <p class="parrafo__menor" id="contenido__mensaje__error">Ingrese un texto</p>
+                </div>
                 <div class="contenido__principal__botones">
                     <button class="botones__diseño btn_encriptar" id="btnEncriptar"
                         onclick="encriptar()">Encriptar</button>
@@ -33,7 +37,7 @@
                         onclick="desencriptar()">Desencriptar</button>
                 </div>
             </section>
-            
+
             <section class="contenido__secundario">
                 <textarea class="contenido__secundario__area" id="textoResultante" cols=4 readonly="readonly"
                     disabled="disabled"></textarea>
@@ -64,7 +68,6 @@
     </footer>
 
     <script src="app.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

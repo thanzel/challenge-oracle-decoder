@@ -38,7 +38,8 @@ function capturaTexto() {
 }
 
 // Función para el proceso de encriptacion
-function encriptar() {
+function encriptar() {  
+    isVisible("alerta", false);
     textoIngresado = capturaTexto();
     esClickeado = true;
     if (esValido(textoIngresado)) {
@@ -55,6 +56,7 @@ function encriptarSoloVocales(texto) {
 
 // Función para el proceso de desencriptación
 function desencriptar() {
+    isVisible("alerta", false);  
     textoIngresado = capturaTexto();
     esClickeado = false;
     if (esValido(textoIngresado)) {
@@ -72,25 +74,45 @@ function desencriptarSoloVocales(texto) {
 // Función para la validación preliminar del texto a procesar (cifrar o descifrar)
 function esValido(textoIngresado) {
     // Verifico si el texto ingresado está vacío, de ser así el proceso no continúa
-    if (textoIngresado === "" || textoIngresado == null) {
-        swal('Error', `Favor ingrese un texto para poder ${(esClickeado === true) ? 'Encriptarlo' : 'Desencriptarlo' }`, 'error');
+    if (textoIngresado === "" || textoIngresado == null) {        
+        isVisible("alerta", true);       
+        asignarTexto("contenido__mensaje__error", `Favor ingrese un texto para ${(esClickeado === true) ? 'Encriptarlo' : 'Desencriptarlo' }`);
         document.getElementById("textoIngresado").focus();
         return false;
     }
 
     // Verifico si el texto ingresado contiene caracteres inválidos como mayusculas. tildes, etc, de ser así el proceso no continua
     if (regexCaracteresValidos.test(textoIngresado) === false) {
-        swal("Texto Inválido", "No se aceptan mayúsculas ni acentos", "error");
+        isVisible("alerta", true);       
+        asignarTexto("contenido__mensaje__error","Solo se aceptan letras minúsculas y sin acentos");
         document.getElementById("textoIngresado").focus();
         return false;
     }
     //retorna true cuando el texto validado está correcto
+    isVisible("alerta", false); 
     return true;
+}
+
+// funcion para reflejar errores o información en el proceso
+function asignarTexto(elemento, texto) {
+    let elementoHTML = document.getElementById(elemento)
+    elementoHTML.innerText = texto;
+    return;
+}
+
+// Función para mostrar o esconder elementos en la página  
+function isVisible(elemento, estatus) {
+    let elementoHTML = document.getElementById(elemento);
+    elementoHTML.style.visibility =  (estatus == true) ? 'visible' : 'hidden';    
+    console.log(estatus);
+    return;
 }
 
 // Función para copiar en el portapapeles el texto procesado
 function copiarTexto() {
-    navigator.clipboard.writeText(document.getElementById("textoResultante").value);
+    navigator.clipboard.writeText(document.getElementById("textoResultante").value);        
+    asignarTexto("contenido__mensaje__error","Texto copiado en el portapapeles");
+    isVisible("alerta", true);
     return;
 }
 
@@ -99,9 +121,11 @@ function condicionesIniciales() {
     document.getElementById("imgLaptop").style.visibility = 'visible';
     document.getElementById("parrafo1").style.visibility = 'visible';
     document.getElementById("parrafo2").style.visibility = 'visible';
-    document.getElementById("btnCopiar").style.visibility = 'hidden';
+    document.getElementById("btnCopiar").style.visibility = 'hidden';       
     document.getElementById("textoIngresado").value = "";
     document.getElementById("textoResultante").value = "";
+    isVisible("alerta", true); 
+    asignarTexto("contenido__mensaje__error","Ingrese un texto");
     textoIngresado = "";
     return;
 }
@@ -112,6 +136,6 @@ function ocultarElementos() {
     document.getElementById("parrafo1").style.visibility = 'hidden';
     document.getElementById("parrafo2").style.visibility = 'hidden';
     document.getElementById("btnCopiar").style.visibility = 'visible';
+    isVisible("alerta", false); 
     return;
 }
-

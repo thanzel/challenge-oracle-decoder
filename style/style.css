@@ -65,8 +65,14 @@ body {
     border: none;
 }
 
+.contenido__principal__alerta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+}
+
 .exclamacion {
-    width: 20px;
+    width: 18px;
 }
 
 .parrafo__menor {
