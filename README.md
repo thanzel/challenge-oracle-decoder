@@ -52,8 +52,6 @@
   ![Static Badge](https://img.shields.io/badge/JAVASCRIPT-fuchsia?style=flat)
   
   ![Static Badge](https://img.shields.io/badge/GOOGLE%20FONTS-red?style=flat)
-  
-  ![Static Badge](https://img.shields.io/badge/SWEETALERT-limegreen?style=flat)
 
   ![Static Badge](https://img.shields.io/badge/PROTOTIPO-FIGMA-orange?style=flat)
 
