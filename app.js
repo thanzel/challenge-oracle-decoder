@@ -75,7 +75,8 @@ function desencriptarSoloVocales(texto) {
 function esValido(textoIngresado) {
     // Verifico si el texto ingresado está vacío, de ser así el proceso no continúa
     if (textoIngresado === "" || textoIngresado == null) {        
-        isVisible("alerta", true);       
+        isVisible("alerta", true); 
+        isVisible("parrafo1", true);      
         asignarTexto("contenido__mensaje__error", `Favor ingrese un texto para ${(esClickeado === true) ? 'Encriptarlo' : 'Desencriptarlo' }`);
         document.getElementById("textoIngresado").focus();
         return false;
@@ -124,6 +125,7 @@ function condicionesIniciales() {
     document.getElementById("textoIngresado").value = "";
     document.getElementById("textoResultante").value = "";
     isVisible("alerta", true); 
+    isVisible("parrafo1", false);  
     asignarTexto("contenido__mensaje__error","Ingrese un texto");
     textoIngresado = "";
     return;
@@ -136,5 +138,6 @@ function ocultarElementos() {
     document.getElementById("parrafo2").style.visibility = 'hidden';
     document.getElementById("btnCopiar").style.visibility = 'visible';
     isVisible("alerta", false); 
+    isVisible("parrafo1", false);  
     return;
 }

@@ -160,7 +160,7 @@ body {
 }
 
 .contenido__secundario__imagen {
-    width: 18rem;
+    width: 17rem;
     margin-top: 10px;
 }
 
@@ -179,7 +179,8 @@ body {
 }
 
 .contenido__secundario__parrafo1 {
-    margin-top: 290px;
+    margin-top: 290px;    
+    visibility: hidden;
 }
 
 .contenido__secundario__parrafo2 {
