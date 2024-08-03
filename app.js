@@ -104,7 +104,6 @@ function asignarTexto(elemento, texto) {
 function isVisible(elemento, estatus) {
     let elementoHTML = document.getElementById(elemento);
     elementoHTML.style.visibility =  (estatus == true) ? 'visible' : 'hidden';    
-    console.log(estatus);
     return;
 }
 
