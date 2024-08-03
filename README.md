@@ -31,11 +31,10 @@
 >[!TIP]
 >
 > Prueba con esto:
->
-   * Copia este texto en el área izquierda:
-     - fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!
-   * Click en el botón Desencriptar
-   * Visualiza el mensaje desencriptado en el área derecha
+>   * Copia este texto en el área izquierda:
+>     -  fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!
+>   * Click en el botón Desencriptar
+>   * Visualiza el mensaje desencriptado en el área derecha
       
 ## Desarrollador
 
