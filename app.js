@@ -40,6 +40,7 @@ function capturaTexto() {
 // Función para el proceso de encriptacion
 function encriptar() {  
     isVisible("alerta", false);
+    isVisible("parrafo1", false);  
     textoIngresado = capturaTexto();
     esClickeado = true;
     if (esValido(textoIngresado)) {
@@ -57,6 +58,7 @@ function encriptarSoloVocales(texto) {
 // Función para el proceso de desencriptación
 function desencriptar() {
     isVisible("alerta", false);  
+    isVisible("parrafo1", false);  
     textoIngresado = capturaTexto();
     esClickeado = false;
     if (esValido(textoIngresado)) {
@@ -75,9 +77,10 @@ function desencriptarSoloVocales(texto) {
 function esValido(textoIngresado) {
     // Verifico si el texto ingresado está vacío, de ser así el proceso no continúa
     if (textoIngresado === "" || textoIngresado == null) {        
-        isVisible("alerta", true); 
-        isVisible("parrafo1", true);      
+        isVisible("alerta", true);         
         asignarTexto("contenido__mensaje__error", `Favor ingrese un texto para ${(esClickeado === true) ? 'Encriptarlo' : 'Desencriptarlo' }`);
+        isVisible("parrafo1", true);      
+        asignarTexto("parrafo1", "Ningún mensaje fue encontrado");
         document.getElementById("textoIngresado").focus();
         return false;
     }
@@ -86,17 +89,20 @@ function esValido(textoIngresado) {
     if (regexCaracteresValidos.test(textoIngresado) === false) {
         isVisible("alerta", true);       
         asignarTexto("contenido__mensaje__error","Solo se aceptan letras minúsculas y sin acentos");
+        isVisible("parrafo1", true);  
+        asignarTexto("parrafo1", "Solo minúsculas, sin acentos");
         document.getElementById("textoIngresado").focus();
         return false;
     }
     //retorna true cuando el texto validado está correcto
     isVisible("alerta", false); 
+    isVisible("parrafo1", false); 
     return true;
 }
 
 // funcion para reflejar errores o información en el proceso
 function asignarTexto(elemento, texto) {
-    let elementoHTML = document.getElementById(elemento)
+    let elementoHTML = document.getElementById(elemento);
     elementoHTML.innerText = texto;
     return;
 }
@@ -125,7 +131,7 @@ function condicionesIniciales() {
     document.getElementById("textoIngresado").value = "";
     document.getElementById("textoResultante").value = "";
     isVisible("alerta", true); 
-    isVisible("parrafo1", false);  
+    isVisible("parrafo1", true);  
     asignarTexto("contenido__mensaje__error","Ingrese un texto");
     textoIngresado = "";
     return;
