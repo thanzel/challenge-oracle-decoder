@@ -131,8 +131,9 @@ function condicionesIniciales() {
     document.getElementById("textoIngresado").value = "";
     document.getElementById("textoResultante").value = "";
     isVisible("alerta", true); 
-    isVisible("parrafo1", true);  
-    asignarTexto("contenido__mensaje__error","Ingrese un texto");
+    isVisible("parrafo1", true); 
+    asignarTexto("contenido__mensaje__error","Solo se aceptan letras minúsculas y sin acentos");
+    asignarTexto("parrafo1", "Ingrese un texto para procesar");     
     textoIngresado = "";
     return;
 }
