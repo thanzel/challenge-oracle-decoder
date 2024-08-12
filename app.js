@@ -10,24 +10,12 @@ const regexCaracteresValidos = /^[a-z0-9\s!@#$%^&*()_+=[\]{};':"\\|,.<>/?~-]*$/;
 //Constantes regex para la encriptación
 const regexParaEncritarVocales = /[aeiou]/g;
 //Constante objeto tipo maps (clave-valor) para encriptar
-const encriptacionDeVocales = {
-    "a": "ai",
-    "e": "enter",
-    "i": "imes",
-    "o": "ober",
-    "u": "ufat"
-};
+const encriptacionDeVocales = {"a": "ai", "e": "enter", "i": "imes", "o": "ober", "u": "ufat"};
 
 //Constantes regex para la desencriptacion
 const regexParaDesencritarVocales = /ai|enter|imes|ober|ufat/g;
 //Constante objeto tipo maps (clave-valor) para desencriptar
-const desencriptacionDeVocales = {
-    "ai": "a",
-    "enter": "e",
-    "imes": "i",
-    "ober": "o",
-    "ufat": "u"
-};
+const desencriptacionDeVocales = {"ai": "a", "enter": "e", "imes": "i", "ober": "o", "ufat": "u"};
 
 // Constantes para los botones de la pantalla, así poder controlar cuando se clickea alguno
 const btnEnc = document.getElementById('btnEncriptar');
@@ -76,6 +64,7 @@ function desencriptarSoloVocales(texto) {
 // Función para la validación preliminar del texto a procesar (cifrar o descifrar)
 function esValido(textoIngresado) {
     // Verifico si el texto ingresado está vacío, de ser así el proceso no continúa
+    limpiar();
     if (textoIngresado === "" || textoIngresado == null) {        
         isVisible("alerta", true);         
         asignarTexto("contenido__mensaje__error", `Favor ingrese un texto para ${(esClickeado === true) ? 'Encriptarlo' : 'Desencriptarlo' }`);
@@ -90,6 +79,7 @@ function esValido(textoIngresado) {
         isVisible("alerta", true);       
         asignarTexto("contenido__mensaje__error","Solo se aceptan letras minúsculas y sin acentos");
         isVisible("parrafo1", true);  
+        document.getElementById("textoIngresado").value = "";
         asignarTexto("parrafo1", "Solo minúsculas, sin acentos");
         document.getElementById("textoIngresado").focus();
         return false;
@@ -138,12 +128,22 @@ function condicionesIniciales() {
     return;
 }
 
+function limpiar() {
+    document.getElementById("imgLaptop").style.visibility = 'visible';
+    document.getElementById("parrafo1").style.visibility = 'visible';
+    document.getElementById("parrafo2").style.visibility = 'visible';
+    document.getElementById("btnCopiar").style.visibility = 'hidden';           
+    document.getElementById("textoResultante").value = "";
+}
+
+
 // Función para ocultar los elementos de la página cuando se termina el proceso 
 function ocultarElementos() {
     document.getElementById("imgLaptop").style.visibility = 'hidden';
     document.getElementById("parrafo1").style.visibility = 'hidden';
     document.getElementById("parrafo2").style.visibility = 'hidden';
     document.getElementById("btnCopiar").style.visibility = 'visible';
+    document.getElementById("textoIngresado").value = "";
     isVisible("alerta", false); 
     isVisible("parrafo1", false);  
     return;
