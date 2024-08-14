@@ -145,7 +145,6 @@ function limpiar() {
     return;
 }
 
-
 // Función para ocultar los elementos de la página cuando se termina el proceso 
 function ocultarElementos() {
     imagen.style.visibility = 'hidden';
